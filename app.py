@@ -19,7 +19,7 @@ MODEL_PATH = "./model.hdf5"
 model = load_model(MODEL_PATH, compile=False)
 
 # Define the class labels
-CLASS_LABELS = ['angry', 'happy', 'sad', 'disgust', 'neutral', 'scared', 'fear']
+CLASS_LABELS = ['angry', 'disgust', 'sad', 'happy', 'neutral', 'scared', 'fear']
 
 # Preprocessing function (update target_size as per your model's input)
 def preprocess_image(img_path):
@@ -70,6 +70,7 @@ def analyze_image():
 
                 if pred_idx < len(CLASS_LABELS):
                     emotion = CLASS_LABELS[pred_idx]
+                    print(f"Predicted emotion: {emotion}")
                 else:
                     return jsonify({'error': f'Prediction index {pred_idx} out of range'}), 500
             else:
