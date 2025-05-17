@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mood Detector</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
     <link
       rel="stylesheet"
@@ -15,14 +19,16 @@
   </head>
   <body>
     <div class="container">
-      <h1>Mood Detector</h1>
-      <p class="subtitle">Upload an image to detect the mood  . Make sure the image is in one of the following categories: angry, disgust, sad, happy, neutral, scared, fear.And the format of the image should be png, jpg, jpeg.</p>
+      <header>
+        <h1><i class="fas fa-smile"></i> Mood Detector</h1>
+        <p class="subtitle">Upload an image to detect the mood. Make sure the image is in one of the following categories: angry, disgust, sad, happy, neutral, scared, fear. And the format of the image should be png, jpg, jpeg.</p>
+      </header>
 
       <div class="upload-container">
         <div class="upload-area" id="dropZone">
           <input type="file" id="fileInput" accept="image/*" hidden />
           <div class="upload-content">
-          
+            <i class="fas fa-cloud-upload-alt upload-icon"></i>
             <p>Drag & Drop your image here or</p>
             <button
               class="upload-btn"
@@ -48,6 +54,26 @@
         <div class="spinner"></div>
         <p>Analyzing image...</p>
       </div>
+
+      <section class="about-section">
+        <h2>About This App</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>Welcome to Mood Detector, an advanced emotion recognition application powered by machine learning. Our app uses a sophisticated neural network trained on thousands of facial expressions to accurately detect emotions in images.</p>
+            <p>Key Features:</p>
+            <ul>
+              <li><i class="fas fa-check"></i> Real-time emotion detection</li>
+              <li><i class="fas fa-check"></i> Support for multiple emotions</li>
+              <li><i class="fas fa-check"></i> High accuracy results</li>
+              <li><i class="fas fa-check"></i> User-friendly interface</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <p>Made with <i class="fas fa-heart"></i> using Machine Learning</p>
+      </footer>
     </div>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
