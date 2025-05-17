@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mood Detector</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Mood Detector</h1>
+      <p class="subtitle">Upload an image to detect the mood</p>
+
+      <div class="upload-container">
+        <div class="upload-area" id="dropZone">
+          <input type="file" id="fileInput" accept="image/*" hidden />
+          <div class="upload-content">
+            <img
+              src="{{ url_for('static', filename='upload-icon.svg') }}"
+              alt="Upload"
+              id="uploadIcon"
+            />
+            <p>Drag & Drop your image here or</p>
+            <button
+              class="upload-btn"
+              onclick="document.getElementById('fileInput').click()"
+            >
+              Choose File
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="result-container" id="resultContainer" style="display: none">
+        <div class="preview-container">
+          <img id="previewImage" src="" alt="Preview" />
+        </div>
+        <div class="emotion-result">
+          <h2>Detected Mood:</h2>
+          <p id="emotionText" class="emotion"></p>
+        </div>
+      </div>
+
+      <div class="loading" id="loading" style="display: none">
+        <div class="spinner"></div>
+        <p>Analyzing image...</p>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
